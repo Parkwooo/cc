@@ -1,0 +1,26 @@
+import sys
+import urllib2
+import time
+from datetime import datetime, timedelta
+
+while 1 :
+    t = time.localtime()
+    tsec = t.tm_sec
+    if tsec%10!=0 :
+            print tsec
+            time.sleep(0.2)
+
+    else :
+          url = "http://127.0.0.1:4242/api/put" 
+
+         data = { 
+               "metric": "foo.bar", 
+               "timestamp": time.time(), 
+              "value": 2015, 
+               "tags": { 
+                  "host": "mypc" 
+                 } 
+             }
+             
+             /수정하기
+
